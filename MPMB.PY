@@ -66,7 +66,7 @@ def write_to_csv(records, csv_path):
 
 def main():
     binary_file_path = 'bin.gps'  # Path to the binary GPS file
-    csv_file_path = 'mmpmb.csv'     # Path to the output CSV file
+    csv_file_path = 'mpmb.csv'     # Path to the output CSV file
 
     records = parse_gps_binary(binary_file_path)
     write_to_csv(records, csv_file_path)
