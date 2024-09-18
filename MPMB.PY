@@ -8,8 +8,8 @@ def parse_gps_binary(file_path):
     with open(file_path, 'rb') as bin_file:
         while True:
             # Read the sync header
-            sync_header = bin_file.read(4)
-            if len(sync_header) < 4:
+            sync_header = bin_file.read(32)
+            if len(sync_header) < 32:
                 break  # End of file reached
             
             message_id, = struct.unpack('I', sync_header)
@@ -65,8 +65,8 @@ def write_to_csv(records, csv_path):
         csv_writer.writerows(records)
 
 def main():
-    binary_file_path = 'bin.gps'  # Path to the binary GPS file
-    csv_file_path = 'mpmb.csv'     # Path to the output CSV file
+    binary_file_path = 'rawdata/NDB24hrs.gps'  # Path to the binary GPS file
+    csv_file_path = 'ndb24hrs/ndb24hrs_mpma.csv'     # Path to the output CSV file
 
     records = parse_gps_binary(binary_file_path)
     write_to_csv(records, csv_file_path)

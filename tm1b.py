@@ -46,7 +46,7 @@ def write_to_csv(records, csv_path):
         csv_writer.writerows(records)
 
 def main():
-    binary_file_path = 'bin.gps'  # Path to the binary TM1B file
+    binary_file_path = 'rawdata/clubhouse24hrs.gps'  # Path to the binary TM1B file
     csv_file_path = 'tm1b.csv'      # Path to the output CSV file
 
     records = parse_tm1b_binary(binary_file_path)

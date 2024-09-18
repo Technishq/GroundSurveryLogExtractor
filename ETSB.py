@@ -58,7 +58,7 @@ def write_to_csv(records, csv_path):
 
 def main():
     binary_file_path = 'bin.gps'  # Path to the binary EATS file
-    csv_file_path = 'etsb.csv'     # Path to the output CSV file
+    csv_file_path = 'rawdata/etsb.csv'     # Path to the output CSV file
 
     records = parse_eats_binary(binary_file_path)
     write_to_csv(records, csv_file_path)
